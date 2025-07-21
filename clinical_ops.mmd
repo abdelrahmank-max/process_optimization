@@ -1,0 +1,28 @@
+flowchart TD
+    A["Project Initiation"] --> B["Project Plan"]
+    B --> C{"Resources Allocation"} & G["Training Team Communication"]
+    C --> D["FTEs"] & E["Hybrid"] & F["Contractors"]
+    G --> H["Technical Lead Sync"]
+    H --> I["Guidelines Creation / Technical Requirements"]
+    I -- "2-5 days" --> J["Kick-off Session"]
+    J -- "2-3 days" --> K["Baseline Planning"]
+    K --> L["Rate Calculation"]
+    L --> M{"Meeting Deadline"}
+    M -- Yes --> N["Start Annotation"]
+    M -- No --> O["Propose ETA"]
+    O --> P@{ label: "Requester's Confirmation" }
+    P -- Yes --> N
+    P -- No --> O
+    N --> Q["QC Scores"] & S{"Score Misalignment"}
+    Q -- Every 7 days --> R["Feedback"]
+    R --> N
+    S -- Yes --> T["Technical Meeting"]
+    T --> U["Continue Annotation"]
+    S -- No --> V["Review The Annotations"]
+    V --> W{"Review Process"}
+    W -- Yes --> X["Generate Questions"]
+    X --> Y["Review Answers"]
+    Y --> N
+    W -- No --> Z["Project Delivery"]
+
+    P@{ shape: diamond}
